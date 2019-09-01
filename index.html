@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="main.css" rel="stylesheet">
+    <title>Currency Exchange rates</title>
+</head>
+<body>
+    
+    
+    <div class="container-fluid mainBoard"> 
+        <div style="background-color: transparent; color: rgb(255, 255, 255);" class="jumbotron mb-0">
+            <h1> Exchange Rates </h1>
+        </div>      
+        <div id="rateBoard" height="300px"  class="row ">
+                <div height="100%"  class="card-bg1 text-white mt-5 col-9 ml-auto mr-auto">
+                        <div class="mb-5">
+                          <h1 >Currency Converter</h1>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-12 ml-auto mr-auto mb-2">
+                              <h5 style="display: block">Amount</h5>
+                             <button width=100%; class=" btn btn-currency btn-lg btn-block "><input id="amount" type="number" value="1"></button> 
+                            </div>
+                            <div class="col-lg-3 col-sm-12 ml-auto mr-auto mb-2">
+                                <h5 style="display: block" >From</h5>
+                                <div width=100%; class="dropdown" id="convertFrom">
+                                    <button name="USD" width=100%; class="btn btn-currency btn-lg btn-block dropdown-toggle" type="button" id="dropdownMenuButtonBase" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="currency-flag currency-flag-lg" style="background-image:url('currenciesIcons/usd.svg')" ></span> US Dollar
+                                      </button>
+                                    <div width=100%; class="dropdown-menu ddScroll" aria-labelledby="dropdownMenuButtonBase" id="currenciesDdBase">
+                                      <a  class="dropdown-item " > <span class="currency-flag currency-flag-ils"></span> ILS</a>
+
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class=" ml-auto mr-auto mt-b2">
+                            <button  id="btn-switch" class="switch"><svg width="50px" height="47px" viewBox="0 0 50 47" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-label="Inverse button" role="img"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-297.000000, -595.000000)" fill="#FFFFFF"><g transform="translate(50.000000, 394.000000)"><g transform="translate(247.000000, 201.000000)"><g transform="translate(7.142857, 25.000000)"><polygon points="42.7539856 10.9773747 19.455409 0 19.455409 7.87415338 0 7.87415338 0 14.080596 19.455409 14.080596 19.455409 21.9547493"></polygon></g><g transform="translate(21.428571, 11.309524) rotate(-180.000000) translate(-21.428571, -11.309524) "><polygon points="42.7539856 10.9773747 19.455409 0 19.455409 7.87415338 0 7.87415338 0 14.080596 19.455409 14.080596 19.455409 21.9547493"></polygon></g></g></g></g></g></svg></button>
+                          </div>
+                            <div class="col-lg-3 col-sm-12 ml-auto mr-auto">
+                                <h5 style="display: block">To</h5>
+                                    <div width=100%; class="dropdown" id="convertTo">
+                                        <button name="ILS" width=100%; class="btn btn-currency btn-lg btn-block dropdown-toggle" type="button" id="dropdownMenuButtonRate" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span class="currency-flag currency-flag-lg" style="background-image:url('currenciesIcons/ils.svg')" ></span> Israeli Shekel
+                                        </button>
+                                        <div width=100%; class="dropdown-menu ddScroll" aria-labelledby="dropdownMenuButtonRate" id="currenciesDdRate">
+                                          <a  class="dropdown-item " > <span class="currency-flag currency-flag-usd"></span> Euro</a>
+                                        </div>
+                                      </div>
+                                </div>
+                                <div width=100%; class="col-lg-1 col-sm-12 ml-auto mr-auto mt-2">
+                                  <br>
+                                  <button id="submitBtn" width=100%; class="btn btn-lg arw-btn btn-block"> <svg width="18px" height="29px" aria-label="Right Arrow" color="#002272" viewBox="0 0 18 29" version="1.1" xmlns="http://www.w3.org/2000/svg"><title>Right Arrow</title><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path fill="currentColor" fill-rule="nonzero" transform="translate(9.024418, 14.285714) rotate(-360.000000) translate(-9.024418, -14.285714)" d="M0.738857321,4.2743665 C-0.241098176,3.30171419 -0.247018582,1.71881282 0.725633723,0.738857321 C1.69828603,-0.241098176 3.2811874,-0.247018582 4.2611429,0.725633723 L18.0488368,14.4105738 L4.51266154,27.8457997 C3.53270351,28.8184494 1.94980215,28.8125249 0.977152403,27.8325668 C0.00450265508,26.8526088 0.0104271921,25.2697074 0.990385226,24.2970577 L10.9511634,14.4105646 L0.738857321,4.2743665 Z"></path></g></svg> </button>
+                                </div>    
+                        </div>
+                        <div id="converterResult" class="row mt-4">
+                          <div class="ml-auto mr-auto text-center mt-3"> <span>All figures are live mid-market rates, which are not available to consumers and are for <br>informational purposes only.</span></div>
+                        </div>
+        </div>
+
+    </div>
+  </div>
+
+    
+<script src="jquery.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+<script src="currencies.js"></script>
+<script src="service.js"></script>
+<script src="index.js"></script>   
+</body>
+</html>
